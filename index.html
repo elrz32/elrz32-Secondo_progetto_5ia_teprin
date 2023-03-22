@@ -4,20 +4,41 @@
         <title>Concerti In programma</title>
     </head>
     <body>
-        <h1 class="font"> GESTIONE DEI CONCERTI IN PROGRAMMA</h1>
+        <h1 class="font"> GESTIONE DEI CONCERTI IN PROGRAMMA<br>MY BLOODY VALENTINE</h1>
+        
+        <br>
+        <br>
+
+        <div id="container" class="font">
+            <div>sezione1</div>
+            <div>sezione2</div>    <!--qui ci saranno gli eventi creati-->
+        </div>
+
+        <br>
+
+        <form action="aggiunta.php" id="pulsante">
+            <input type="submit" value="AGGIUNGI" id="pulsante_aggiunta" class="font">
+        </div>
 
         <style>
             body{
                 background-color: #C4326B;
             }
-
             h1{
                 text-align: center;
-                color: black;
+                color:black;
+                background-color:crimson;
             }
-
             .font{
-                font-family:Arial, Helvetica, sans-serif;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+            }
+            #container,#pulsante{
+                text-align: center;
+                font-size: medium;
+            }
+            #pulsante_aggiunta{
+                background-color:rosybrown;
+                border: solid;
             }
         </style>
     </body>
