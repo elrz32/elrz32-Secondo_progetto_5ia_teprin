@@ -2,7 +2,7 @@ var myHeaders = new Headers();
 myHeaders.append("Authorization", "token 1d88dd4c-7114-46c5-b927-741ee3630bf5\n");
 myHeaders.append("Content-Type", "application/json");   
 
-/*var requestOptions = {
+var requestOptions = {
     method: 'GET',
     headers: myHeaders,
     redirect: 'follow'
@@ -13,16 +13,6 @@ myHeaders.append("Content-Type", "application/json");
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
-
-*/
-
-
-
-
-
-
-
-/*
 
 
             //event1
@@ -145,6 +135,3 @@ myHeaders.append("Content-Type", "application/json");
                 
             })
             .catch(error => console.log('error', error));
-
-
-            */
