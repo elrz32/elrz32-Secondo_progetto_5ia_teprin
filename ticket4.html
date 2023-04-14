@@ -4,8 +4,61 @@
         <title>Ticket Foggia</title>
     </head>
     <body>
+
+        <h1>INFORMAZIONI TICKET Foggia</h1>
+        <div  class="font">
+            <table id="contenitore_informazioni">
+                <tr>
+                  <th>Descrizione</th>
+                  <th id="descrizione"></th>
+                </tr>
+                <tr>
+                  <td>Location</td>
+                  <td id="location"></td>
+                </tr>
+                <tr>
+                    <td>Host</td>
+                    <td id="host"></td>
+                </tr>
+              </table>
+            <br>
+            <form action="index.html">
+                <input type="submit" value="torna indietro" alt="torna_indietro" id="pulsante" class="font">
+            </form>
+        </div>
+
         <link rel="stylesheet" href="stile_font_corpo.css"> 
+        <link rel="stylesheet" href="stile_pagina_ticket.css">
         <script>
+
+            //creazione host
+            var myHost = new Headers();
+            myHost.append("Content-Type", "application/json");
+            myHost.append("Authorization", "token 1d88dd4c-7114-46c5-b927-741ee3630bf5");
+
+            var host = JSON.stringify({
+            "name": "Silvio",
+            "surname": "Berlusconi"
+            });
+
+            var richiestaHost = {
+            method: 'POST',
+            headers: myHost,
+            body: host,
+            redirect: 'follow'
+            };
+
+            fetch("https://events.abattaglia.it/api/event/feb29e77-20fe-4101-af4b-3798eecc4182/activity/0c564d91-b16b-453a-a50e-0d2b7b5e03b3/host/set", richiestaHost)
+            .then(response => response.text())
+            .then(result => {
+                var ris=JSON.parse(host);
+                
+                let hostNomeCognome=document.getElementById("host");
+                hostNomeCognome.innerHTML=ris.name+" "+ris.surname;
+            })
+            .catch(error => console.log('error', error));
+
+            //creazione activity
             var myHeaders = new Headers();
             myHeaders.append("Authorization", "token 1d88dd4c-7114-46c5-b927-741ee3630bf5\n");
             myHeaders.append("Content-Type", "application/json");   
@@ -25,7 +78,15 @@
             fetch("https://events.abattaglia.it/api/event/071f76d6-6156-4f62-83e9-0356cea12465/activity/create", requestOptions)
             .then(response => response.text())
             .then(result => {
-                console.log(result)
+                var ris=JSON.parse(attivita);
+                
+                let descrizione=document.getElementById("descrizione");
+                descrizione.innerHTML=ris.description;
+
+                var ris=JSON.parse(attivita);
+                
+                let locazione=document.getElementById("location");
+                locazione.innerHTML=ris.location;
             })
             .catch(error => console.log('error', error));
         </script>

@@ -1,0 +1,24 @@
+#pulsante{
+    color: #fff;
+    padding: 6px 14px;
+    background: #777;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    right: 48%;
+}
+
+#pulsante:hover{
+    background:#767;
+}
+
+#contenitore_informazioni{
+    position: relative;
+    left: 40%;
+    text-align: center;
+    font-size: larger;
+}
+
+th, td {
+    padding: 15px;
+  }
