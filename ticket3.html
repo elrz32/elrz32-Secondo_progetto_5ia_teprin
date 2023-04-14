@@ -5,5 +5,29 @@
     </head>
     <body>
         <link rel="stylesheet" href="stile_font_corpo.css"> 
+        <script>
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "token 1d88dd4c-7114-46c5-b927-741ee3630bf5\n");
+            myHeaders.append("Content-Type", "application/json");   
+
+            var attivita = JSON.stringify({
+            "description": "Concerto Woodstock in Texas",
+            "location": "Nachos Arena S1",
+            });
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: attivita,
+            redirect: 'follow'
+            };
+
+            fetch("https://events.abattaglia.it/api/event/015d9429-6f8b-4f40-9a1e-f152cd231fdb/activity/create", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => console.log('error', error));
+        </script>
     </body>
 </html>

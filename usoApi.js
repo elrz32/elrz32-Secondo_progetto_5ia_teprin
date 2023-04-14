@@ -1,6 +1,30 @@
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "token 1d88dd4c-7114-46c5-b927-741ee3630bf5\n");
 myHeaders.append("Content-Type", "application/json");   
+
+/*var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
+  
+  fetch("https://events.abattaglia.it/api/event/list", requestOptions)
+    .then(response => response.json())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+
+*/
+
+
+
+
+
+
+
+/*
+
+
             //event1
             var event1 = JSON.stringify({
                 "title": "Milano Rock Festival",
@@ -92,7 +116,6 @@ myHeaders.append("Content-Type", "application/json");
             })
             .catch(error => console.log('error', error));
 
-
             // event4
             var event4 = JSON.stringify({
                 "title": "Foggia Festival",
@@ -122,3 +145,6 @@ myHeaders.append("Content-Type", "application/json");
                 
             })
             .catch(error => console.log('error', error));
+
+
+            */
